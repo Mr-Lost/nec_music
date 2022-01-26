@@ -1,0 +1,69 @@
+@import "base";
+.myfooter{
+  position: fixed;
+  bottom: 0;
+  width: $pageWidth;
+  background-image: linear-gradient(to right, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  .palyer-info{
+    height: 40px;
+    width: 100%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    .player-song{
+      text-align: center;
+      line-height: 40px;
+      display: flex;
+      .el-avatar{
+        margin: 0 10px;
+      }
+    }
+    .player-tool{
+      float: right;
+      width: 100px;
+      padding-top: 5px;
+      margin-right: 40px;
+      font-size: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .footer-list{
+    display: flex;
+    justify-content: space-around;
+    .footer-item{
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      &.router-link-active{
+        .item-icon{
+          background-color: orange;
+        }
+        .item-text{
+          color: orange;
+        }
+      }
+      .item-icon{
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        margin-left: 35px;
+        border-radius: 100%;
+      }
+      .item-text{
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+//.song-info{
+//  display: inline-block;
+//}
+//
+//.player-play{
+//  float: right;
+//}
+//.player-list{
+//  float: right;
+//}
