@@ -1,0 +1,133 @@
+@import 'base';
+.header-right i{
+  background-color: $activeColor;
+  padding: 3px;
+  font-size: 18px;
+  border-radius: 100%;
+}
+.my-content{
+  .me-circle{
+    font-size: 12px;
+    width: 80px;
+    height: 70px;
+    text-align: center;
+    display: inline-block;
+    i{
+      font-size: 50px;
+      padding-bottom: 3px;
+      color: rgba(234, 162, 76, 0.89);
+    }
+  }
+  .my-circle-wrapper{
+    display: -webkit-box;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    top: -70px;
+    margin-left: 80px;
+    .my-circle{
+      font-size: 12px;
+      width: 80px;
+      text-align: center;
+      .img-wrapper{
+        img{
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+        }
+      }
+      .span1{
+        -webkit-line-clamp: 1;
+      }
+    }
+  }
+  .mc-header{
+    margin-top: -50px;
+    font-size: small;
+    padding: 0 10px;
+    .my-active{
+      font-weight: bold;
+    }
+    .my-category{
+      display: inline-block;
+      float: right;
+      span{
+        padding: 0 5px;
+      }
+    }
+  }
+  .mc-message{
+    padding: 10px;
+    font-size: small;
+    .mcm-head{
+      display: flex;
+      line-height: 25px;
+      img{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-right: 10px;
+      }
+    }
+    .mcm-content{
+      margin-left: 60px;
+      .img-area{
+        border-radius: 10px;
+        display: inline-block;
+        margin: 10px 0;
+        height: 137px;
+        overflow-y: scroll;
+        img{
+          width: 137px;
+          height: 137px;
+        }
+      }
+      .song-area{
+        width: 420px;
+        border-radius: 10px;
+        background-color: rgba(130, 123, 123, 0.2);
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        img{
+          width: 40px;
+          height: 40px;
+          border-radius: 20%;
+          margin-right: 10px;
+        }
+        i{
+          position: relative;
+          font-size: 18px;
+          left: 10px;
+          width: 0;
+        }
+      }
+      .tool-area{
+        font-size: 14px;
+        width: 420px;
+        margin: 10px 0;
+        li{
+          display: inline-block;
+          width: 100px;
+          &:last-of-type{
+            position: absolute;
+            width: auto;
+            right: 10px;
+          }
+        }
+      }
+    }
+  }
+  .mc-more{
+    height: 100px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 13px;
+    div span{
+      padding: 5px 10px;
+      border: 1px solid $borderColor;
+      border-radius: 16px;
+      font-size: 14px;
+    }
+  }
+}

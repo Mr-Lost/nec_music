@@ -1,7 +1,8 @@
 <template>
   <div id="find">
+    <my-drawer/>
     <div class="my-header">
-      <div class="header-list">
+      <div class="header-main">
         <el-input prefix-icon="el-icon-search" v-model="input" placeholder="推荐：xxx"></el-input>
       </div>
       <div class="header-right">
@@ -30,12 +31,14 @@
           </div>
           <ul class="item-wrapper">
             <li v-for="album in myAlbum" :key="'album'+album.id">
-              <img :src="album.src" :alt="album.title">
-              <div class="album-title">{{album.title}}</div>
-              <div class="play-amount">
-                <i class="el-icon-video-play"></i>
-                <span>{{album.amount | convertAmount}}</span>
-              </div>
+              <router-link :to="{name: 'album'}">
+                <img :src="album.src" :alt="album.title">
+                <div class="album-title">{{album.title}}</div>
+                <div class="play-amount">
+                  <i class="el-icon-video-play"></i>
+                  <span>{{album.amount | convertAmount}}</span>
+                </div>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -77,8 +80,10 @@
 </template>
 
 <script>
+import MyDrawer from '../MyDrawer'
 export default {
   name: 'Find',
+  components: {MyDrawer},
   data () {
     return {
       input: '',

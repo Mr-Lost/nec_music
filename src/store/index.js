@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  user: window.sessionStorage.getItem('user')
+  user: window.sessionStorage.getItem('user'),
+  isActive: this.user != null
 }
 const getters = {
   get_userinfo: state => {
@@ -14,6 +15,7 @@ const getters = {
 const mutations = {
   GET_USER: (state, data) => {
     state.user = data
+    console.log(data)
     window.sessionStorage.setItem('user', data)
   },
   LOGOUT: (state) => {
@@ -30,6 +32,6 @@ const actions = {
 
 export default new Vuex.Store({
   getters,
-  state,
+  state: sessionStorage.getItem('state') ? JSON.parse(sessionStorage.getItem('state')) : {user: ''},
   mutations
 })

@@ -1,13 +1,16 @@
 <template>
   <div id="cloud">
+    <my-drawer/>
     <div class="my-header"></div>
     <div class="my-content">这是云村主页</div>
   </div>
 </template>
 
 <script>
+import MyDrawer from '../MyDrawer'
 export default {
-  name: 'Cloud'
+  name: 'Cloud',
+  components: {MyDrawer}
 }
 </script>
 

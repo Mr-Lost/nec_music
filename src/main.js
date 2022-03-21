@@ -7,8 +7,7 @@ import Axios from 'axios'
 import ElementUI from 'element-ui'
 import store from './store'
 import 'element-ui/lib/theme-chalk/index.css'
-import './assets/css/main.css'
-import $ from 'jquery'
+import 'font-awesome/css/font-awesome.min.css'
 
 Vue.config.productionTip = false
 
@@ -34,9 +33,6 @@ Vue.filter('convertAmount', function (data) {
     return data
   }
 })
-
-// import MyFooter from './MyFooter'
-// Vue.component(MyFooter.name, MyFooter)
 
 /* eslint-disable no-new */
 new Vue({

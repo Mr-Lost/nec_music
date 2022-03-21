@@ -1,5 +1,6 @@
 <template>
   <div id="bloger">
+    <my-drawer/>
     <div class="my-header">
       <ul class="head-list">
         <li @click="listChange">推荐</li>
@@ -19,8 +20,10 @@
 </template>
 
 <script>
+import MyDrawer from '../MyDrawer'
 export default {
   name: 'Bloger',
+  components: {MyDrawer},
   data () {
     return {
       have: 'good'

@@ -1,0 +1,92 @@
+@import "base";
+.header-main{
+  opacity: 0;
+}
+.me-title-ava{
+  margin: 0 10px;
+}
+.mine-item{
+  width: 95%;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: rgba(139, 136, 136, 0.3);
+  border-radius: 10px;
+  &:first-of-type{
+    margin-top: 50px;
+  }
+  .user-wrapper{
+    width: 80%;
+    margin: auto;
+    .user-me-avatar{
+      position: relative;
+      top: -60px;
+      left: 40%;
+    }
+    .user-me-name{
+      margin-top: -55px;
+      font-size: 20px;
+      height: 30px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .user-me-info{
+      font-size: 14px;
+      text-align: center;
+      span{
+        padding: 0 10px;
+        &:nth-child(2){
+          border-left: 1px solid rgba(54, 53, 53, 0.2);
+          border-right: 1px solid rgba(54, 53, 53, 0.2);
+        }
+      }
+    }
+  }
+  .user-me-list{
+    li{
+      display: inline-block;
+      padding: 10px 0;
+      width: 100px;
+      text-align: center;
+      font-size: 10px;
+      .me-li-pic{
+        width: 40px;
+        height: 40px;
+        margin: auto;
+        font-size: 30px;
+        i{
+          color: rgb(219, 187, 107);
+        }
+      }
+    }
+  }
+  .user-more-app{
+    margin-top: 10px;
+    font-size: 10px;
+    text-align: center;
+  }
+  .user-fav{
+    display: flex;
+    .fav-wrapper{
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      img{
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+      }
+      i{
+        position: relative;
+        top: -40px;
+        left: 15px;
+        font-size: 20px;
+      }
+    }
+    .fav-info{
+      width: 100px;
+    }
+  }
+}
+.temp{
+  height: 600px;
+}

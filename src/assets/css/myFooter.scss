@@ -37,10 +37,10 @@
       text-align: center;
       &.router-link-active{
         .item-icon{
-          background-color: orange;
+          background-color: $activeColor;
         }
         .item-text{
-          color: orange;
+          color: $activeColor;
         }
       }
       .item-icon{
@@ -56,14 +56,3 @@
     }
   }
 }
-
-//.song-info{
-//  display: inline-block;
-//}
-//
-//.player-play{
-//  float: right;
-//}
-//.player-list{
-//  float: right;
-//}

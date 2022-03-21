@@ -5,20 +5,18 @@
     </div>
     <el-drawer class="drawer-wrapper" :visible.sync="drawer" direction="ltr" :size="400">
       <div class="drawer-head">
-        <div class="user-info">
-          <template v-if="isActive!=null">
-            <el-avatar :size="30" :src="userInfo.avatar"></el-avatar>
+        <router-link :to="mine" class="user-info">
+          <template v-if="userInfo!=null">
+            <el-avatar :size="30" :src="userInfo.ava"></el-avatar>
             <div class="user-name">
               {{userInfo.user}}<i class="el-icon-arrow-right"></i>
             </div>
           </template>
           <template v-else>
             <el-avatar :size="30" :src="defaultAvatar"></el-avatar>
-            <div class="user-name">
-              登录/注册
-            </div>
+            <span @click="drawer=false" class="user-name">登录/注册</span>
           </template>
-        </div>
+        </router-link>
         <div class="scan-info">
           <i class="el-icon-full-screen"></i>
         </div>
@@ -74,7 +72,7 @@
             <li><a href="#"><i class="el-icon-s-management"></i>个人信息与隐私保护<i class="el-icon-arrow-right"></i></a></li>
             <li><a href="#"><i class="el-icon-s-marketing"></i>关于<i class="el-icon-arrow-right"></i></a></li>
           </ul>
-          <ul class="drawer-item"><li><a>退出登录/关闭</a></li></ul>
+          <ul class="drawer-item" @click="mrLogout"><li><a>退出登录/关闭</a></li></ul>
         </div>
     </el-drawer>
   </div>
@@ -88,8 +86,14 @@ export default {
     return {
       drawer: false,
       defaultAvatar: src1,
-      userLogin: { name: 'Login' }
+      mine: { name: 'Mine' }
     }
+  },
+  methods: {
+    mrLogout () { this.$store.commit('LOGOUT'); this.drawer = false }
+  },
+  computed: {
+    userInfo () { return this.$store.state.user }
   }
 }
 </script>

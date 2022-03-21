@@ -11,6 +11,7 @@
     height: 60px;
     width: 400px;
     position: fixed;
+    z-index: 10;
     top: 0;
     background-image: $headBg;
     .user-info {
@@ -52,12 +53,15 @@
       }
       .black-pill{
         float: right;
+        margin-top: -5px;
         border-radius: 4px;
         font-size: xx-small;
-        line-height: 10px;
-        padding: 2px;
+        line-height: 13px;
+        padding: 2px 3px;
         color: white;
-        background-color: orange
+        background-color: orange;
+        transform: scale(.7);
+        display: inline-block;
       }
     }
     &:last-of-type li a{

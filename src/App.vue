@@ -1,32 +1,31 @@
 <template>
   <div id="app">
-    <my-drawer/>
     <router-view/>
     <my-footer/>
   </div>
 </template>
 
 <script>
-import MyDrawer from './MyDrawer'
 import MyFooter from './MyFooter'
 export default {
   name: 'App',
   components: {
-    MyDrawer: MyDrawer,
     MyFooter: MyFooter
   },
-  data () {
-    return {
-      isActive: this.$store.state.user
-    }
+  computed: {
+    userInfo () { return this.$store.state.user }
+  },
+  mounted () {
+    console.log('userInfo is: ', this.userInfo)
+    window.addEventListener('unload', this.saveState)
   },
   methods: {
-    userState () {
-      this.isActive = this.$store.state.user
+    saveState () {
+      sessionStorage.setItem('state', JSON.stringify(this.$store.state))
     }
-  },
-  watch: {
-    isActive: this.userState
   }
 }
 </script>
+
+<style src="./assets/css/main.scss" lang="scss">
+</style>

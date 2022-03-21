@@ -21,14 +21,6 @@
             <span class="item-text">{{ tab.text }}</span>
         </router-link>
       </div>
-<!--      <el-menu :default-active="activeIndex" mode="horizontal">-->
-<!--        <el-menu-item v-for="(tab, index) in tabs" :key="index" :index="index">-->
-<!--          <router-link :to="tab.router">-->
-<!--            <i :class="'el-icon-'+tab.iClass"></i>-->
-<!--            <span>{{tab.text}}</span>-->
-<!--          </router-link>-->
-<!--        </el-menu-item>-->
-<!--      </el-menu>-->
     </div>
 </template>
 
@@ -36,11 +28,6 @@
 import song1 from './assets/logo.png'
 export default {
   name: 'MyFooter',
-  methods: {
-    myFun: function () {
-      document.getElementsByClassName('footer-item').classList.add('active')
-    }
-  },
   data () {
     return {
       activeIndex: 0,
@@ -55,9 +42,6 @@ export default {
     }
   }
 }
-// $(function () {
-//   $('.footer-list').children()[0].classList.add('active')
-// })
 </script>
 
 <style scoped lang="scss" src="@/assets/css/myFooter.scss">

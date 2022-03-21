@@ -12,7 +12,6 @@ ul{
 }
 body{
   margin: 0;
-  /*background-color: rgba(130, 121, 121, 0.4);*/
   background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 }
 *::-webkit-scrollbar{
@@ -21,6 +20,7 @@ body{
 #app{
   width: 500px;
   margin: auto;
+  overflow: hidden;
 }
 .el-menu{
   background-color: transparent;
@@ -51,19 +51,25 @@ body{
   display: none;
 }
 .my-header{
-  padding-top: 5px;
   height: 50px;
   width: 500px;
-  padding-left: 50px;
   position: fixed;
   top: 0;
   z-index: 990;
   background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec);
 }
-.header-list{
+.header-main{
   width: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
 }
 .header-right{
+  width: 50px;
   font-size: 20px;
   padding: 13px;
   position: absolute;
@@ -73,4 +79,13 @@ body{
 .my-content{
   margin-top: 60px;
   margin-bottom: 100px;
+  overflow: hidden;
+}
+.my-3dots{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.vice-text{
+  color: #d0c6c6;
 }

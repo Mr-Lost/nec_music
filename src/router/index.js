@@ -5,7 +5,7 @@ import Bloger from '../components/Bloger'
 import Mine from '../components/Mine'
 import Follow from '../components/Follow'
 import Cloud from '../components/Cloud'
-import Login from '../Login'
+import Album from '../components/Album'
 
 Vue.use(Router)
 
@@ -27,11 +27,6 @@ export default new Router({
       component: Mine
     },
     {
-      path: '/mine/login',
-      name: 'Login',
-      component: Login
-    },
-    {
       path: '/follow',
       name: 'Follow',
       component: Follow
@@ -41,11 +36,11 @@ export default new Router({
       name: 'Cloud',
       component: Cloud
     },
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   component: Login
-    // },
+    {
+      path: '/album',
+      name: 'album',
+      component: Album
+    },
     {
       path: '*',
       redirect: Find
