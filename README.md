@@ -1,6 +1,5 @@
 # nec_music
-
-> An imitation of nec_music of mobile terminal
+ An imitation of nec_music of mobile terminal
 
 ## Build Setup
 
