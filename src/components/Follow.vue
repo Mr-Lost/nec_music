@@ -1,12 +1,20 @@
 <template>
   <div id="follow">
-    <my-drawer/>
-    <div class="my-header">
-      <div class="header-main">动态</div>
-      <div class="header-right">
-        <i class="el-icon-plus"></i>
-      </div>
-    </div>
+    <my-header>
+      <template #header-left>
+        <my-drawer></my-drawer>
+      </template>
+      <template #header-main>
+        <div class="header-ele1">
+          <span>动态</span>
+        </div>
+      </template>
+      <template #header-right>
+        <div class="header-ele1">
+          <i class="el-icon-plus"></i>
+        </div>
+      </template>
+    </my-header>
     <div class="my-content">
       <div class="me-circle">
         <div><i class="el-icon-cloudy"></i></div>
@@ -87,7 +95,8 @@
 </template>
 
 <script>
-import MyDrawer from '../MyDrawer'
+import MyDrawer from './common/MyDrawer'
+import MyHeader from './common/MyHeader'
 import src1 from '../assets/album.png'
 export default {
   name: 'Follow',
@@ -104,7 +113,7 @@ export default {
         {ava: src1, userName: '陈壹千ac'}]
     }
   },
-  components: {MyDrawer}
+  components: {MyDrawer, MyHeader}
 }
 </script>
 

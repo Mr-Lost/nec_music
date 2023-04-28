@@ -1,11 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Find from '@/components/Find'
-import Bloger from '../components/Bloger'
-import Mine from '../components/Mine'
-import Follow from '../components/Follow'
-import Cloud from '../components/Cloud'
-import Album from '../components/Album'
 
 Vue.use(Router)
 
@@ -14,36 +8,58 @@ export default new Router({
     {
       path: '/home',
       name: 'Find',
-      component: Find
+      component: () => import('../components/find/Find')
+    },
+    {
+      path: '/home/singers?type=:type&area=:area&initial=:initial',
+      name: 'Singers',
+      params: {
+        type: {type: Number, default: -1},
+        area: {type: Number, default: -1},
+        initial: {type: Number, default: -1}
+      },
+      component: () => import('../components/find/Singers'),
+      children: [
+        {
+          path: '?type=:type&area=:area',
+          name: 'SingerList',
+          component: () => import('../components/find/SingerList')
+        }
+      ]
+    },
+    {
+      path: '/home/singer/detail',
+      name: 'SingerDetail',
+      component: () => import('../components/find/SingerDetail')
+    },
+    {
+      path: '/home/album/:aid',
+      name: 'Album',
+      component: () => import('../components/Album')
     },
     {
       path: '/blog',
-      name: 'Bloger',
-      component: Bloger
+      name: 'Blogger',
+      component: () => import('../components/Blogger')
     },
     {
       path: '/mine',
       name: 'Mine',
-      component: Mine
+      component: () => import('../components/Mine')
     },
     {
       path: '/follow',
       name: 'Follow',
-      component: Follow
+      component: () => import('../components/Follow')
     },
     {
       path: '/cloud',
       name: 'Cloud',
-      component: Cloud
-    },
-    {
-      path: '/album',
-      name: 'album',
-      component: Album
+      component: () => import('@/components/Cloud')
     },
     {
       path: '*',
-      redirect: Find
+      redirect: {name: 'Find'}
     }
   ]
 })

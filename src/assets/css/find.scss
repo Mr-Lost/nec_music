@@ -1,4 +1,32 @@
 @import "base.scss";
+.header-search{
+      border-radius: 10px;
+      height: 100%;
+      width: 100%;
+      font-size: 20px;
+      line-height: 50px;
+      position: relative;
+      i{
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        color: $viceColor;
+      }
+      input{
+        font-size: 20px;
+        width: 95%;
+        height: 60%;
+        outline: none;
+        border-radius: 20px;
+        padding: 5px 20px 5px 40px;
+        border: 0;
+        background: transparent;
+        color: $viceColor;
+        &::-webkit-input-placeholder{
+          color: $viceColor;
+        }
+      }
+    }
 .my-content{
   .el-carousel{
     margin: 0 10px;
@@ -22,19 +50,19 @@
       li{
         text-align: center;
         font-size: 10px;
-        margin-right: 30px;
-        &:last-of-type{
-          margin: 0;
-        }
+        margin: 0 15px;
         .li-pic{
-          width: 50px;
-          height: 50px;
+          min-width: 60px;
+          min-height: 60px;
           font-size: 30px;
           border-radius: 100%;
           background-color: rgba(248, 164, 37, 0.3);
           i{
-            margin-top: 10px;
+            line-height: 60px;
           }
+        }
+        span{
+          letter-spacing: -1px;
         }
       }
 
@@ -42,15 +70,16 @@
     .nav-item{
       border-radius: 7px;
       background-color: rgba(179, 165, 165, 0.2);
-      padding: 0 10px;
+      padding: 10px 0;
       margin-bottom: 10px;
       .item-head{
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 30px;
+        padding: 0 10px;
         .item-title{
-          font-size: 16px;
+          font-size: 18px;
         }
         .righton{
           border: 1px solid $borderColor;
@@ -60,15 +89,15 @@
         }
       }
       .item-wrapper{
-        padding-bottom: 10px;
         display: -webkit-box;
         overflow-x: scroll;
+        padding: 0 5px;
         li{
-          font-size: 13px;
+          font-size: 12px;
           width: 120px;
           margin: 10px 5px;
-          height: 160px;
           overflow: hidden;
+          position: relative;
           img{
             width: 120px;
             border-radius: 15px;
@@ -78,17 +107,19 @@
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
             overflow: hidden;
-            height: 35px;
           }
           .play-amount{
-            position: relative;
-            float: right;
-            top: -150px;
+            position: absolute;
+            top: 5px;
             right: 5px;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 10px;
             padding: 0 5px;
             background-color: rgba(76, 69, 69, 0.2);
+            span{
+              letter-spacing: -0.5px;
+              margin-left: -2px;
+            }
           }
         }
       }

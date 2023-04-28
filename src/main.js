@@ -8,13 +8,13 @@ import ElementUI from 'element-ui'
 import store from './store'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'font-awesome/css/font-awesome.min.css'
+import './assets/css/global.css'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.prototype.$axios = Axios
-Axios.defaults.baseURL = process.env.BASE_API
-// Axios.defaults.baseURL = 'http://127.0.0.1:3000/api'
+Axios.defaults.baseURL = 'http://127.0.0.1:3000'
 
 Vue.filter('convertAmount', function (data) {
   if (data.toString().length >= 13) {
@@ -33,6 +33,16 @@ Vue.filter('convertAmount', function (data) {
     return data
   }
 })
+
+Vue.prototype.changeMask = function (masked) {
+  if (masked) {
+    document.querySelector('.drawer-bg').style.left = 0
+    document.querySelector('.drawer-bg').style.background = 'rgba(0,0,0,0.3)'
+  } else {
+    document.querySelector('.drawer-bg').style.left = '-100vw'
+    document.querySelector('.drawer-bg').style.background = 'transparent'
+  }
+}
 
 /* eslint-disable no-new */
 new Vue({

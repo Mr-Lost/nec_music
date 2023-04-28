@@ -2,30 +2,26 @@
   <div id="app">
     <router-view/>
     <my-footer/>
+    <my-player/>
   </div>
 </template>
 
 <script>
-import MyFooter from './MyFooter'
+import MyFooter from './components/common/MyFooter'
+import MyPlayer from './components/common/MyPlayer'
 export default {
   name: 'App',
-  components: {
-    MyFooter: MyFooter
-  },
-  computed: {
-    userInfo () { return this.$store.state.user }
-  },
+  components: {MyFooter, MyPlayer},
   mounted () {
-    console.log('userInfo is: ', this.userInfo)
     window.addEventListener('unload', this.saveState)
   },
   methods: {
     saveState () {
+      this.$store.state.masked = false
       sessionStorage.setItem('state', JSON.stringify(this.$store.state))
     }
   }
 }
 </script>
 
-<style src="./assets/css/main.scss" lang="scss">
-</style>
+<style lang="scss" src="@/assets/css/main.scss"></style>

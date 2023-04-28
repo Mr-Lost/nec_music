@@ -1,41 +1,22 @@
 @import "base";
-.myfooter{
+.my-footer{
   position: fixed;
   bottom: 0;
-  width: $pageWidth;
+  width: 100vw;
+  height: $footerHeight;
   background-image: linear-gradient(to right, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-  .palyer-info{
-    height: 40px;
-    width: 100%;
-    margin-left: 10px;
-    display: flex;
-    justify-content: space-between;
-    .player-song{
-      text-align: center;
-      line-height: 40px;
-      display: flex;
-      .el-avatar{
-        margin: 0 10px;
-      }
-    }
-    .player-tool{
-      float: right;
-      width: 100px;
-      padding-top: 5px;
-      margin-right: 40px;
-      font-size: 30px;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
   .footer-list{
     display: flex;
     justify-content: space-around;
+    height: 100%;
     .footer-item{
-      width: 100px;
-      height: 50px;
+      width: 20%;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
       &.router-link-active{
+        pointer-events: none;
         .item-icon{
           background-color: $activeColor;
         }
@@ -47,7 +28,7 @@
         width: 30px;
         height: 30px;
         font-size: 20px;
-        margin-left: 35px;
+        margin: 0 auto;
         border-radius: 100%;
       }
       .item-text{

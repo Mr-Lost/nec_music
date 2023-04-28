@@ -1,9 +1,13 @@
 $pageWidth: 500px;
-$viceColor: #cbbfbf;
+$headerHeight: 50px;
+$playerHeight: 40px;
+$footerHeight: 60px;
+$mainColor: #fdf7f7;
+$viceColor: rgba(253, 247, 247, 0.8);
 $activeColor: orange;
 $pageBg: rgb(109, 105, 105);
 $borderColor: rgba(248, 241, 241, .3);
 $headBg: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec);
-$bodyBg: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+$bodyBg: linear-gradient(to right bottom, #3c48a8, #475ab5, #536cc2, #617ece, #7090d9, #7191da, #7392dc, #7493dd, #6984d5, #5f74cc, #5764c3, #5154b9);
 $itemBg: linear-gradient(to right bottom, #be76ad, #8f8bcb, #599cce, #46a6ba, #64aa9e);
 

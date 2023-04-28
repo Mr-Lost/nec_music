@@ -1,15 +1,24 @@
 <template>
   <div id="mine">
-    <my-drawer/>
-    <div class="my-header">
-      <div class="header-main" v-if="userInfo!=null">
-        <el-avatar class="me-title-ava" :src="userInfo.ava" :size=30></el-avatar>
-        <span>{{userInfo.user}}</span>
-      </div>
-      <div class="header-right">
-        <i class="el-icon-search"></i>
-      </div>
-    </div>
+    <my-header>
+      <template #header-left>
+        <my-drawer></my-drawer>
+      </template>
+      <template #header-main>
+        <div class="header-ele1" v-if="userInfo!=null">
+          <el-avatar class="me-title-ava" :src="userInfo.ava" :size=30></el-avatar>
+          <span>{{userInfo.user}}</span>
+        </div>
+        <div class="header-ele1" v-else>
+          <span>~未登录~</span>
+        </div>
+      </template>
+      <template #header-right>
+        <div class="header-ele1">
+          <i class="el-icon-search"></i>
+        </div>
+      </template>
+    </my-header>
     <div class="my-content">
       <div class="mine-item">
         <template v-if="userInfo!=null">
@@ -113,9 +122,11 @@
 </template>
 
 <script>
-import MyDrawer from '../MyDrawer'
+import MyHeader from './common/MyHeader'
+import MyDrawer from './common/MyDrawer'
 export default {
   name: 'Mine',
+  components: {MyHeader, MyDrawer},
   data () {
     return {
       username: '',
@@ -126,20 +137,30 @@ export default {
     userInfo () { return this.$store.state.user }
   },
   methods: {
+    // addUser () {
+    //   const name = this.username
+    //   const pwd = this.password
+    //   this.$axios.post('/user/register', {
+    //     username: name,
+    //     password: pwd
+    //   }).then((response) => {
+    //     this.$store.commit('GET_USER', response.data)
+    //   }).catch(err => { console.log('用户注册异常', err) })
+    // },
     addUser () {
       const name = this.username
       const pwd = this.password
-      this.$axios.post('/api/user/register', {
+      this.$axios.post('/user/register', {
         username: name,
         password: pwd
       }).then((response) => {
         this.$store.commit('GET_USER', response.data)
-      })
+      }).catch(err => { console.log('用户注册异常', err) })
     },
     mrLogin () {
       const name = this.username
       const pwd = this.password
-      this.$axios.post('/api/user/login', {
+      this.$axios.post('/user/login', {
         username: name,
         password: pwd
       }).then((res) => {
@@ -150,13 +171,15 @@ export default {
       })
     },
     fadeTitle () {
-      let title = document.getElementsByClassName('header-main')[0]
-      let user = document.getElementsByClassName('mine-item')[0]
-      if (scrollY < 150) {
-        let val = scrollY / 150
-        let val2 = (150 - scrollY) / 150
-        title.style.opacity = val.toFixed(1)
-        user.style.opacity = val2.toFixed(1)
+      if (this.userInfo) {
+        let title = document.getElementsByClassName('header-main')[0]
+        let user = document.getElementsByClassName('mine-item')[0]
+        if (scrollY < 150) {
+          let val = scrollY / 150
+          let val2 = (150 - scrollY) / 150
+          title.style.opacity = val.toFixed(1)
+          user.style.opacity = val2.toFixed(1)
+        }
       }
     }
   },
@@ -165,8 +188,7 @@ export default {
   },
   destroyed () {
     window.removeEventListener('scroll', this.fadeTitle)
-  },
-  components: { MyDrawer }
+  }
 }
 </script>
 

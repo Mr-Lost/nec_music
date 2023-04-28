@@ -1,8 +1,9 @@
+@import "base";
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #fdf7f7;
+  color: $mainColor;
 }
 a{
   text-decoration: none;
@@ -11,17 +12,17 @@ ul{
   list-style: none;
 }
 body{
-  margin: 0;
-  background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-image: $bodyBg;
 }
 *::-webkit-scrollbar{
   display: none;
 }
 #app{
-  width: 500px;
-  margin: auto;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
 }
+
 .el-menu{
   background-color: transparent;
 }
@@ -50,36 +51,11 @@ body{
 .el-carousel__arrow{
   display: none;
 }
-.my-header{
-  height: 50px;
-  width: 500px;
-  position: fixed;
-  top: 0;
-  z-index: 990;
-  background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec);
-}
-.header-main{
-  width: 400px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 50px;
-  text-align: center;
-  font-weight: bold;
-}
-.header-right{
-  width: 50px;
-  font-size: 20px;
-  padding: 13px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
 .my-content{
-  margin-top: 60px;
-  margin-bottom: 100px;
-  overflow: hidden;
+  margin-top: $headerHeight;
+  margin-bottom: $footerHeight + $playerHeight;
+  padding: 10px 0;
+  //overflow: hidden;
 }
 .my-3dots{
   display: -webkit-box;
@@ -87,5 +63,6 @@ body{
   overflow: hidden;
 }
 .vice-text{
-  color: #d0c6c6;
+  color: $viceColor;
 }
+

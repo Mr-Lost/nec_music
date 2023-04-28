@@ -8,7 +8,8 @@ var sqlMap = {
     top: 'select id, title, url from carousel'
   },
   album: {
-    top: 'select id, title, src, amount from album'
+    top: 'select id, title, src, amount from album',
+    detail: 'select s.title, s.author, s.album, s.avatar, s.video, s.hq from song_bank s where s.sid in (select song_id from alb_song_map where album_id = ?)'
   }
 }
 

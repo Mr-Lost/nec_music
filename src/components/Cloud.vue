@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import MyDrawer from '../MyDrawer'
+import MyDrawer from './common/MyDrawer'
 export default {
   name: 'Cloud',
   components: {MyDrawer}
